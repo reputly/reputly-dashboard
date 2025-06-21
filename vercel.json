@@ -1,18 +1,25 @@
 {
   "redirects": [
     {
-      "source": "http://reputly.app",
-      "destination": "https://www.reputly.app",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "reputly.app"
+        }
+      ],
+      "destination": "https://www.reputly.app/:1",
       "permanent": true
     },
     {
-      "source": "https://reputly.app",
-      "destination": "https://www.reputly.app",
-      "permanent": true
-    },
-    {
-      "source": "http://www.reputly.app",
-      "destination": "https://www.reputly.app",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "http://www.reputly.app"
+        }
+      ],
+      "destination": "https://www.reputly.app/:1",
       "permanent": true
     }
   ]
