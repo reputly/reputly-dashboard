@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      // 1️⃣  Force HTTPS pour tout (www ou non-www)
+      "source": "/(.*)",
+      "has": [
+        { "type": "header", "key": "x-forwarded-proto", "value": "http" }
+      ],
+      "destination": "https://www.reputly.app/$1",
+      "permanent": true
+    },
+    {
+      // 2️⃣  Domaine nu : reputly.app  → www.reputly.app
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "reputly.app" }
+      ],
+      "destination": "https://www.reputly.app/$1",
+      "permanent": true
+    },
+    {
+      // 2️⃣  Domaine nu : reputly.net  → www.reputly.app
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "reputly.net" }
+      ],
+      "destination": "https://www.reputly.app/$1",
+      "permanent": true
+    },
+    {
+      // 2️⃣  Domaine nu : reputly.eu   → www.reputly.app
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "reputly.eu" }
+      ],
+      "destination": "https://www.reputly.app/$1",
+      "permanent": true
+    },
+    {
+      // 2️⃣  Domaine nu : reputly.info → www.reputly.app
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "reputly.info" }
+      ],
+      "destination": "https://www.reputly.app/$1",
+      "permanent": true
+    }
+  ]
+}
